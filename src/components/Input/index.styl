@@ -1,0 +1,42 @@
+input, label
+  width: 100%
+
+label
+  color: rgba(black, 0.87)
+  display: inline
+  font-size: 14px
+
+input, textarea
+  background-color: white
+  border: 1px solid rgba(black, 0.05)
+  border-radius: 4px
+  color: rgba(black, 0.64)
+  display: block
+  font-family: 'Roboto', sans-serif
+  font-size: 14px
+  font-weight: 300
+  margin: 15px 0 30px 0
+  padding: 12px
+  transition: 0.3s border-color, 0.1s color, 0.3s opacity
+  width: 100%
+  &:focus, &:hover
+    border-color: #0076FF
+    color: rgba(black, 0.64)
+  &[type='submit']
+    background-color: #0076FF
+    border-radius: 4px
+    color: white
+    cursor: pointer
+    font-size: 13px
+    font-weight: 200
+    margin: 40px 0 0 auto
+    opacity: 0.9
+    padding: 12px 18px
+    text-transform: uppercase
+    width: auto
+    &:hover
+      opacity: 1
+
+textarea
+  line-height: 150%
+  resize: none

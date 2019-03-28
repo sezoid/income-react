@@ -1,0 +1,10 @@
+{
+  "name": "@sezyara/components",
+  "version": "1.2.0",
+  "description": "All components",
+  "main": "index.js",
+  "dependencies": {
+    "prop-types": "15.7.2"
+  },
+  "license": "MIT"
+}
