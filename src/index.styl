@@ -42,3 +42,15 @@ body
       font-weight: 300
       line-height: 24px
       margin: 12px 16px
+
+@media (min-width: 900px)
+  #result .item
+    width: calc(33.33% - 24px) !important
+
+@media (max-width: 900px)
+  #result .item
+    width: calc(50% - 24px) !important
+
+@media (max-width: 640px)
+  #result .item
+    width: calc(100% - 24px) !important
