@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import './index.styl';
 
 const Card = ({ children, description, title, toggle }) => {
-  const [status, setStatus] = useState(toggle);
+  const [status, setStatus] = useState(toggle || null);
 
   const _toggle = () => {
     if (status === 'hide') {
@@ -24,7 +24,9 @@ const Card = ({ children, description, title, toggle }) => {
           status === 'hide' || status === 'show' ? ' toggle' : ''
         }`}
         onClick={_toggle}
-        title={status !== undefined && 'Вы можете свернуть/развернуть данный блок'}
+        title={
+          status !== undefined && 'Вы можете свернуть/развернуть данный блок'
+        }
       >
         {title}
       </h2>
@@ -35,7 +37,10 @@ const Card = ({ children, description, title, toggle }) => {
 };
 
 Card.propTypes = {
-  children: PropTypes.array.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.array.isRequired,
+    PropTypes.object.isRequired
+  ]),
   description: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   toggle: PropTypes.string

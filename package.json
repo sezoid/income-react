@@ -2,6 +2,9 @@
   "name": "income-react",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "src/components"
+  ],
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",

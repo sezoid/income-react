@@ -1,6 +1,6 @@
 {
-  "name": "@sezyara/components",
-  "version": "1.2.0",
+  "name": "@income-react/components",
+  "version": "1.0.0",
   "description": "All components",
   "main": "index.js",
   "dependencies": {
