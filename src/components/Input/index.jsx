@@ -12,25 +12,25 @@ const Input = ({ id, min, max, placeholder, step, title, type, value }) => {
   };
 
   const element = type !== 'textarea' ? 'input' : 'textarea';
+  const elementEqualsProps = {
+    id: id,
+    onChange: _handleOnChange,
+    placeholder: placeholder,
+    value: currentValue
+  };
   const elementProps =
     type !== 'textarea'
       ? {
           autoComplete: 'off',
-          id: id,
           min: min,
           max: max,
-          onChange: _handleOnChange,
           step: step,
           type: type,
-          placeholder: placeholder,
-          value: currentValue
+          ...elementEqualsProps
         }
       : {
-          id: id,
-          onChange: _handleOnChange,
-          placeholder: placeholder,
           rows: 5,
-          value: currentValue
+          ...elementEqualsProps
         };
 
   return (

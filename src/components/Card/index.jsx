@@ -25,7 +25,9 @@ const Card = ({ children, description, title, toggle }) => {
         }`}
         onClick={_toggle}
         title={
-          status !== undefined && 'Вы можете свернуть/развернуть данный блок'
+          status === 'hide' || status === 'show'
+            ? 'Вы можете свернуть/развернуть данный блок'
+            : null
         }
       >
         {title}

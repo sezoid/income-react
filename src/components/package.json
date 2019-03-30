@@ -4,7 +4,8 @@
   "description": "All components",
   "main": "index.js",
   "dependencies": {
-    "prop-types": "15.7.2"
+    "prop-types": "15.7.2",
+    "react-copy-to-clipboard": "5.0.1"
   },
   "license": "MIT"
 }

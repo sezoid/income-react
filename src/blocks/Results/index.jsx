@@ -13,7 +13,7 @@ const Results = ({ data }) => {
 
   return (
     Object.entries(data).length !== 0 && (
-      <Card description='Все округлено в большую сторону' title='Результат'>
+      <Card description='Все округлено в большую сторону. Вы можете скопировать каждый результат отдельно, нажав на соответствующую карточку.' title='Результат'>
         <div id='result'>
           <CardItem title='По часам' value={_round(byhours)} />
           <CardItem title='Премия' value={_round(bonus)} />
