@@ -1,4 +1,5 @@
 import CalculateForm from './CalculateForm';
 import Results from './Results';
+import Settings from './Settings';
 
-export { CalculateForm, Results };
+export { CalculateForm, Results, Settings };

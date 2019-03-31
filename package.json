@@ -16,6 +16,7 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "burn": "yarn build && firebase deploy",
     "postinstall": "cd src/components && yarn"
   },
   "eslintConfig": {

@@ -21,15 +21,6 @@ const CalculateForm = ({ onSubmit }) => {
           step='0.01'
           value=''
         />
-        <Input
-          id='experience'
-          min='0'
-          placeholder='Введите размер доплаты'
-          title='Доплата за непрерывный стаж'
-          step='0.01'
-          type='number'
-          value=''
-        />
         <Input id='calculate' type='submit' value='Подсчитать' />
       </form>
     </Card>

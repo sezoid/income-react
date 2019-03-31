@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 // 📦 components
 import { Header } from '@income-react/components';
-import { CalculateForm, Results } from './blocks';
+import { CalculateForm, Results, Settings } from './blocks';
 
 // 🎨 styles
 import './index.styl';
@@ -11,16 +11,16 @@ import './index.styl';
 import * as serviceWorker from './serviceWorker';
 
 const App = () => {
-  const [result, calculate] = useState({});
+  const [result, getResult] = useState({});
 
   const [settings, setSettings] = useState({
-    experience: 151.82,                         // непрерывный стаж
-    tariffRate: 65.6,                           // стоимость часа
-    percentBonus: 47,                           // размер премии (%)
-    percentDistrict: 15,                        // районный коэффициент (%)
-    percentHarm: 4,                             // вредность (%)
-    percentTax: 13,                             // НДФЛ (%)
-    percentUnion: 1                             // взносы в профсоюз (%)
+    experience: 151.82, // непрерывный стаж
+    tariffRate: 65.6, // стоимость часа
+    percentBonus: 47, // размер премии (%)
+    percentDistrict: 15, // районный коэффициент (%)
+    percentHarm: 4, // вредность (%)
+    percentTax: 13, // НДФЛ (%)
+    percentUnion: 1 // взносы в профсоюз (%)
   });
 
   const _onSubmit = event => {
@@ -42,15 +42,15 @@ const App = () => {
     const total =
       byhours + harm + bonus + district + settings.experience - (tax + union);
 
-    calculate({
+    getResult({
       bonus: bonus,
+      byhours: byhours,
       district: district,
       experience: settings.experience,
       harm: harm,
       tax: tax,
-      byhours: byhours,
-      union: union,
-      total: total
+      total: total,
+      union: union
     });
   };
 
@@ -59,6 +59,7 @@ const App = () => {
       <Header title='Мой доход' />
       <CalculateForm onSubmit={_onSubmit} />
       <Results data={result} />
+      <Settings currentSettings={settings} onSubmit={setSettings} />
     </>
   );
 };
