@@ -11,9 +11,7 @@ import './index.styl';
 import * as serviceWorker from './serviceWorker';
 
 const App = () => {
-  const [result, getResult] = useState({});
-
-  const [settings, setSettings] = useState({
+  const defaultSettings = {
     experience: 151.82, // непрерывный стаж
     tariffRate: 65.6, // стоимость часа
     percentBonus: 47, // размер премии (%)
@@ -21,7 +19,14 @@ const App = () => {
     percentHarm: 4, // вредность (%)
     percentTax: 13, // НДФЛ (%)
     percentUnion: 1 // взносы в профсоюз (%)
-  });
+  };
+  const savedSettings = JSON.parse(localStorage.getItem('settings'));
+  const initialSettings =
+    savedSettings !== null && savedSettings !== undefined
+      ? savedSettings
+      : defaultSettings;
+  const [settings, setSettings] = useState(initialSettings);
+  const [result, getResult] = useState({});
 
   const _onSubmit = event => {
     event.preventDefault();

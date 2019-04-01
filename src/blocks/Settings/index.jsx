@@ -19,7 +19,18 @@ const Settings = ({ currentSettings, onSubmit }) => {
     };
 
     onSubmit(newSettings);
+    localStorage.setItem('settings', JSON.stringify(newSettings));
   };
+
+  const {
+    experience,
+    percentBonus,
+    percentDistrict,
+    percentHarm,
+    percentTax,
+    percentUnion,
+    tariffRate
+  } = currentSettings;
 
   return (
     <Card
@@ -35,7 +46,7 @@ const Settings = ({ currentSettings, onSubmit }) => {
           title='Тарифная ставка'
           type='number'
           step='0.01'
-          value={currentSettings.tariffRate}
+          value={tariffRate}
         />
         <Input
           id='experience'
@@ -44,7 +55,7 @@ const Settings = ({ currentSettings, onSubmit }) => {
           title='Доплата за непрерывный стаж'
           type='number'
           step='0.01'
-          value={currentSettings.experience}
+          value={experience}
         />
         <Input
           id='percentHarm'
@@ -53,7 +64,7 @@ const Settings = ({ currentSettings, onSubmit }) => {
           title='Вредные условия'
           type='number'
           step='0.01'
-          value={currentSettings.percentHarm}
+          value={percentHarm}
         />
         <Input
           id='percentBonus'
@@ -62,7 +73,7 @@ const Settings = ({ currentSettings, onSubmit }) => {
           title='Премия'
           type='number'
           step='0.01'
-          value={currentSettings.percentBonus}
+          value={percentBonus}
         />
         <Input
           id='percentDistrict'
@@ -71,7 +82,7 @@ const Settings = ({ currentSettings, onSubmit }) => {
           title='Районный коэффициент'
           type='number'
           step='0.01'
-          value={currentSettings.percentDistrict}
+          value={percentDistrict}
         />
         <Input
           id='percentTax'
@@ -80,7 +91,7 @@ const Settings = ({ currentSettings, onSubmit }) => {
           title='Подоходный налог'
           type='number'
           step='0.01'
-          value={currentSettings.percentTax}
+          value={percentTax}
         />
         <Input
           id='percentUnion'
@@ -89,7 +100,7 @@ const Settings = ({ currentSettings, onSubmit }) => {
           title='Профсоюзные взносы'
           type='number'
           step='0.01'
-          value={currentSettings.percentUnion}
+          value={percentUnion}
         />
         <Input id='save' type='submit' value='Сохранить настройки' />
       </form>

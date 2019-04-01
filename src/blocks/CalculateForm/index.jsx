@@ -8,6 +8,7 @@ const CalculateForm = ({ onSubmit }) => {
   return (
     <Card
       description='Сколько мы зарабатываем?'
+      style={{ margin: '95px 30px 0 30px' }}
       title='Месячный доход'
       toggle='show'
     >

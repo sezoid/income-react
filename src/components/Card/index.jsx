@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // Styles
 import './index.styl';
 
-const Card = ({ children, description, title, toggle }) => {
+const Card = ({ children, description, style, title, toggle }) => {
   const [status, setStatus] = useState(toggle || null);
 
   const _toggle = () => {
@@ -18,7 +18,7 @@ const Card = ({ children, description, title, toggle }) => {
   };
 
   return (
-    <div className='card'>
+    <div className='card' style={style}>
       <h2
         className={`title${
           status === 'hide' || status === 'show' ? ' toggle' : ''
